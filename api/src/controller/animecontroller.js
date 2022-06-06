@@ -5,10 +5,10 @@ const server = Router();
 
 server.post("/anime", async (req,resp) => {
     try{
-        const novoAnime= req.body;
-        const Animeinserido= await inserirAnime(novoAnime);
+        const { anime } = req.body;
+        const resposta = await  inserirAnime(anime);
 
-        resp.send(Animeinserido);
+        resp.send(resposta)
     }
     catch(err){
         resp.status(400).send({
@@ -28,4 +28,6 @@ catch(err){
 	    erro: err.message})
     }
 })
+
+export default server;
     
