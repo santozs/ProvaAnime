@@ -7,4 +7,3 @@ CREATE TABLE tb_anime (
     )
 );
 
-P
